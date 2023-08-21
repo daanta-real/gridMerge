@@ -8,12 +8,13 @@ import java.io.File;
 import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 // Utilty class
-@Slf4j public final class ReadList {
+@Slf4j public final class GetList {
 
     // Instance not allowed
-    private ReadList(){}
+    private GetList() {}
 
     // Variables
     public static String PATH = Paths.get("").toAbsolutePath().toString();
@@ -47,6 +48,10 @@ import java.util.TreeSet;
 
         fileChooser.setMultiSelectionEnabled(true);
         fileChooser.setDialogTitle("File selection");
+
+        // Currently only accepts bmp files
+        FileNameExtensionFilter bmpFilter = new FileNameExtensionFilter("BMP Files", "bmp");
+        fileChooser.setFileFilter(bmpFilter);
 
     }
 
