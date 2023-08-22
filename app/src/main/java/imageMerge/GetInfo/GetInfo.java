@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.Set;
 
 @Slf4j
 public final class GetInfo extends JFrame {
@@ -16,6 +17,7 @@ public final class GetInfo extends JFrame {
     private final JTextField xSizeField;
     private final JTextField ySizeField;
     private final JRadioButton horizontalRadio;
+    private final JButton listButton;
 
     // Constructor
     private GetInfo() {
@@ -57,10 +59,16 @@ public final class GetInfo extends JFrame {
         add(directionPanel);
 
         // Row 4
-        JButton runButton = new JButton("Find..");
-        runButton.addActionListener(e -> Pref.getInstance().setList(GetList.chooseFiles()));
+        listButton = new JButton("Find..");
+        listButton.addActionListener(e -> {
+            Pref pref = Pref.getInstance();
+            Set<String> list = GetList.chooseFiles();
+            pref.setList(list);
+            int length = list.size();
+            listButton.setText("Found (" + length + " items)");
+        });
         add(new JLabel("Choose files"));
-        add(runButton);
+        add(listButton);
 
         // Row 5
         JButton submitButton = new JButton("Submit");
@@ -92,6 +100,8 @@ public final class GetInfo extends JFrame {
 
     public void setValues() {
 
+        Pref pref = Pref.getInstance();
+
         // Get values
         String xText = xSizeField.getText();
         String yText = ySizeField.getText();
@@ -101,7 +111,7 @@ public final class GetInfo extends JFrame {
         boolean xyIsAllPositive = Util.isPositiveNumber(xText) && Util.isPositiveNumber(yText);
         if(!xyIsAllPositive) {
             String msg = String.format("ERROR.\n\nLIST:\n%s\n\nGRID: %s x %s\n\nDIRECTION: %s",
-                    String.join("\n", Pref.getInstance().getList()),
+                    String.join("\n", pref.getList()),
                     xText,
                     yText,
                     isH ? "HORIZONTAL" : "VERTICAL"
@@ -115,7 +125,6 @@ public final class GetInfo extends JFrame {
             return;
         }
 
-        Pref pref = Pref.getInstance();
         pref.setX(Integer.parseInt(xText));
         pref.setY(Integer.parseInt(yText));
         pref.setIsH(isH);
