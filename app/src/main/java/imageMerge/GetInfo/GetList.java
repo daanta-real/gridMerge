@@ -1,24 +1,22 @@
-package imageMerge;
+package imageMerge.GetInfo;
 
+import imageMerge.Pref;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
-import java.nio.file.Paths;
 import java.util.Set;
 import java.util.TreeSet;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
-// Utilty class
+// Only be used for get file list while GetInfo window is open
 @Slf4j public final class GetList {
 
     // Instance not allowed
     private GetList() {}
 
     // Variables
-    public static String PATH = Paths.get("").toAbsolutePath().toString();
-    private static JFrame frame;
     private static JFileChooser fileChooser;
 
     // Methods
@@ -26,14 +24,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
     // Initializer
     public static void init() {
 
-        PATH = Paths.get("").toAbsolutePath().toString();
-
-        frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(false);
-        frame.pack();
-
-        fileChooser = new JFileChooser(PATH) {
+        fileChooser = new JFileChooser(Pref.PATH) {
             @Override public void approveSelection() {
                 if (getSelectedFiles().length == 0) {
                     JOptionPane.showMessageDialog(this,
@@ -58,20 +49,23 @@ import javax.swing.filechooser.FileNameExtensionFilter;
     // File selector
     @NonNull public static Set<String> chooseFiles() {
 
+        init();
+        GetInfo getInfo = GetInfo.getInstance();
+
         Set<String> result = new TreeSet<>();
 
-        int returnValue = fileChooser.showOpenDialog(frame);
+        int returnValue = fileChooser.showOpenDialog(getInfo);
         log.debug("return value: {}", returnValue);
 
         switch (returnValue) {
             case JFileChooser.CANCEL_OPTION -> { }
-            case JFileChooser.ERROR_OPTION -> JOptionPane.showMessageDialog(frame, "No file selected.", "Alert", JOptionPane.WARNING_MESSAGE);
+            case JFileChooser.ERROR_OPTION -> JOptionPane.showMessageDialog(getInfo, "No file selected.", "Alert", JOptionPane.WARNING_MESSAGE);
             case JFileChooser.APPROVE_OPTION -> {
 
                 File[] selectedFiles = fileChooser.getSelectedFiles();
                 if (selectedFiles.length == 0) {
                     JOptionPane.showMessageDialog(
-                            frame,
+                            getInfo,
                             "No selected options. Please choose at least 1 or more.",
                             "Warning",
                             JOptionPane.WARNING_MESSAGE

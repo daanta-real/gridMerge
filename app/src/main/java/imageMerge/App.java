@@ -3,16 +3,14 @@
  */
 package imageMerge;
 
+import imageMerge.GetInfo.GetInfo;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j public class App {
 
-    public String getGreeting() {
-        return "You will never see this message in log window";
-    }
-
     public static void main(String[] args) {
-        log.debug("The app has been started");
+        log.debug("APP STARTED");
+        GetInfo.open();
     }
 
 }
