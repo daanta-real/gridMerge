@@ -65,7 +65,9 @@ public final class GetInfo extends JFrame {
             Set<String> list = GetList.chooseFiles();
             pref.setList(list);
             int length = list.size();
-            listButton.setText("Found (" + length + " items)");
+            if(length > 0) {
+                listButton.setText("Found (" + length + " items)");
+            }
         });
         add(new JLabel("Choose files"));
         add(listButton);
