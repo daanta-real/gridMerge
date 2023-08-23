@@ -52,4 +52,8 @@ dependencies {
     implementation platform('org.junit:junit-bom:latest.integration')
     implementation 'org.junit.jupiter:junit-jupiter'
 
+    // JSON 처리 라이브러리 GSON
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:latest.integration'
+
 }

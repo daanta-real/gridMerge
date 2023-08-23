@@ -1,5 +1,6 @@
 package imageMerge.GetInfo;
 
+import com.google.gson.GsonBuilder;
 import imageMerge.Pref;
 import imageMerge.Util;
 import lombok.extern.slf4j.Slf4j;
@@ -131,12 +132,20 @@ public final class GetInfo extends JFrame {
         pref.setY(Integer.parseInt(yText));
         pref.setIsH(isH);
 
+        String infoes1 = String.format("X Size: " + xText + "\nY Size: " + yText + "\nHorizontal: " + isH);
+        String infoes2 = String.format(new GsonBuilder().setPrettyPrinting().create().toJson(pref.getList()));
+        String infoResult = String.format("%s\n%s", infoes1, infoes2);
+        pref.setResultInfo(infoResult);
+
         JOptionPane.showMessageDialog(
                 GetInfo.this,
-                "X Size: " + xText + "\nY Size: " + yText + "\nHorizontal: " + isH,
+                infoResult,
                 "User Input",
                 JOptionPane.INFORMATION_MESSAGE
         );
+
+        // Close this window
+        setVisible(false);
 
     }
 

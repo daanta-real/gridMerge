@@ -9,8 +9,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j public class App {
 
     public static void main(String[] args) {
+
         log.debug("APP STARTED");
+
         GetInfo.open();
+
+        Pref pref = Pref.getInstance();
+        log.debug("RESULT:\n\n{}\n\n", pref.getResultInfo());
+
+
+
     }
 
 }

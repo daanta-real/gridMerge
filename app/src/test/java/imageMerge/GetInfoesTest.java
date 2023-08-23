@@ -1,6 +1,5 @@
 package imageMerge;
 
-import imageMerge.GetInfo.GetInfo;
 import imageMerge.GetInfo.GetList;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,10 +20,6 @@ import java.util.Set;
         for(String pathOne: result) {
             log.debug("path: {}", pathOne);
         }
-    }
-
-    @Test void popupTest() {
-        GetInfo.open();
     }
 
 }
