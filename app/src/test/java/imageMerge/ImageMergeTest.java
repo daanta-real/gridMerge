@@ -7,7 +7,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileReader;
-import java.util.*;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 public class ImageMergeTest {
@@ -50,24 +52,13 @@ public class ImageMergeTest {
             log.debug("{}: {}", i, s);
         }
 
-        log.debug("CONFIRMING VALUES FINISHED");
+        log.debug("CONFIRMING VALUES FINISHED\n");
 
     }
 
     @Test
-    void nameOrderingTest() {
-
-        for(int i = 0, currLoop = 1; i < y; i++) {
-            for(int j = 0; j < x; j++) {
-                int targetElement = isH
-                    ? i * x + j // Horizontal
-                    : j * y + i // Vertical
-                ;
-                log.debug("[{}번째] ({}, {}) ▶▶▶ {}번 그림 ({})", currLoop++, i, j, targetElement, list.get(targetElement));
-            }
-        }
-
+    void goMerge() throws Exception {
+        Merge.doMerge();
     }
-
 
 }

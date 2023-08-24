@@ -1,6 +1,10 @@
 package imageMerge;
 
+import com.google.gson.GsonBuilder;
+import lombok.NonNull;
 import org.junit.platform.commons.util.StringUtils;
+
+import java.util.List;
 
 public final class Util {
 
@@ -23,6 +27,10 @@ public final class Util {
 
         return true;
 
+    }
+
+    @NonNull public static String getPrettyStringByJson(List<String> list) {
+        return String.format(new GsonBuilder().setPrettyPrinting().create().toJson(list));
     }
 
 }
