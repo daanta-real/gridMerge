@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.Set;
+import java.util.List;
 
 @Slf4j class GetInfoesTest {
 
@@ -16,7 +16,7 @@ import java.util.Set;
 
     // Save target files list into a TreeSet using file selector window
     @Test void getFilesToPathList() {
-        Set<String> result = GetList.chooseFiles();
+        List<String> result = GetList.chooseFiles();
         for(String pathOne: result) {
             log.debug("path: {}", pathOne);
         }

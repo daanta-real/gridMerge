@@ -1,3 +1,4 @@
+
 package imageMerge.GetInfo;
 
 import imageMerge.Pref;
@@ -7,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.List;
 
 // Only be used for get file list while GetInfo window is open
 @Slf4j public final class GetList {
@@ -47,12 +48,12 @@ import java.util.TreeSet;
     }
 
     // File selector
-    @NonNull public static Set<String> chooseFiles() {
+    @NonNull public static List<String> chooseFiles() {
 
         init();
         GetInfo getInfo = GetInfo.getInstance();
 
-        Set<String> result = new TreeSet<>();
+        List<String> result = new ArrayList<>();
 
         int returnValue = fileChooser.showOpenDialog(getInfo);
         log.debug("return value: {}", returnValue);

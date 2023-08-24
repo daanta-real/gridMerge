@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.util.Set;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
@@ -65,7 +65,7 @@ public final class GetInfo extends JFrame {
         listButton = new JButton("Find..");
         listButton.addActionListener(e -> {
             Pref pref = Pref.getInstance();
-            Set<String> list = GetList.chooseFiles();
+            List<String> list = GetList.chooseFiles();
             pref.setList(list);
             int length = list.size();
             if(length > 0) {

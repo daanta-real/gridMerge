@@ -1,8 +1,9 @@
 package imageMerge;
 
 import java.nio.file.Paths;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public final class Pref {
 
@@ -16,7 +17,7 @@ public final class Pref {
     // Fields
     public static String PATH = Paths.get("").toAbsolutePath().toString();
     private int x, y;
-    private Set<String> list = new TreeSet<>();
+    private List<String> list = new ArrayList<>();
     private boolean isH; // Horizontal = true, Vertical = false
     private String resultInfo; // Result info as String
 
@@ -36,10 +37,11 @@ public final class Pref {
     public void setY(int y) {
         this.y = y;
     }
-    public Set<String> getList() {
+    public List<String> getList() {
         return list;
     }
-    public void setList(Set<String> list) {
+    public void setList(List<String> list) {
+        list.sort(Comparator.naturalOrder()); // Asc ordering
         this.list = list;
     }
     public boolean getIsH() {
