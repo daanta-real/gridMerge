@@ -12,28 +12,34 @@ import java.util.*;
 @Slf4j
 public class ImageMergeTest {
 
-    private final int x = 4, y = 4;
-    private final boolean isH = true;
+    private static int x;
+    private static int y;
+    private static boolean isH;
     private static List<String> list;
 
     @BeforeAll
     static void prepareValues() {
         Gson gson = new Gson();
-        try(FileReader fileReader = new FileReader(Pref.PATH + "/../imageList.json")) {
-            list = gson.fromJson(fileReader, new TypeToken<List<String>>(){}.getType());
-            list.sort(Comparator.naturalOrder()); // sort required
+        try(FileReader fileReader = new FileReader(Pref.PATH + "/../testValues.json")) {
+            Map<String, Object> map = gson.fromJson(fileReader, new TypeToken<Map<String, Object>>() {}.getType());
+
+            x = Integer.parseInt(String.valueOf(map.get("x")));
+            y = Integer.parseInt(String.valueOf(map.get("y")));
+            isH = Boolean.parseBoolean(String.valueOf(map.get("isH")));
+            list = gson.fromJson(gson.toJson(map.get("list")), new TypeToken<List<String>>() {}.getType());
+
+            list.sort(Comparator.naturalOrder()); // can't believe the values, sort required
+
         } catch(Exception e) {
             e.printStackTrace();
         }
-    }
 
-    @Test
-    void confirmValues() {
-
-        log.debug("START\n");
 
         // Confirm values
+        log.debug("CONFIRMING VALUES START\n");
+
         log.debug("GRID: {} x {}", x, y);
+        log.debug("DIRECTION: {}", isH ? "HORIZONTAL" : "VERTICAL");
         log.debug("IMG FIRST:{}", list.stream().findFirst().orElse(null));
         log.debug("IMG LIST: ");
         for(int i = 0, size = list.size(); i < size; i++) {
@@ -44,7 +50,22 @@ public class ImageMergeTest {
             log.debug("{}: {}", i, s);
         }
 
-        log.debug("FINISHED");
+        log.debug("CONFIRMING VALUES FINISHED");
+
+    }
+
+    @Test
+    void nameOrderingTest() {
+
+        for(int i = 0, currLoop = 1; i < y; i++) {
+            for(int j = 0; j < x; j++) {
+                int targetElement = isH
+                    ? i * x + j // Horizontal
+                    : j * y + i // Vertical
+                ;
+                log.debug("[{}번째] ({}, {}) ▶▶▶ {}번 그림 ({})", currLoop++, i, j, targetElement, list.get(targetElement));
+            }
+        }
 
     }
 
