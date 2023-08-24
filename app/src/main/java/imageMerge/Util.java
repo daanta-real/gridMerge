@@ -3,6 +3,7 @@ package imageMerge;
 import org.junit.platform.commons.util.StringUtils;
 
 public final class Util {
+
     public static boolean isPositiveNumber(String value) {
 
         try {

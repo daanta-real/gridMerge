@@ -6,18 +6,27 @@ package imageMerge;
 import imageMerge.GetInfo.GetInfo;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.concurrent.CompletableFuture;
+
 @Slf4j public class App {
 
     public static void main(String[] args) {
 
         log.debug("APP STARTED");
 
-        GetInfo.open();
+        GetInfo getInfo = GetInfo.getInstance();
+        CompletableFuture<Void> future = getInfo.open();
+
+        try {
+            future.get();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
         Pref pref = Pref.getInstance();
         log.debug("RESULT:\n\n{}\n\n", pref.getResultInfo());
 
-
+        System.exit(0);
 
     }
 

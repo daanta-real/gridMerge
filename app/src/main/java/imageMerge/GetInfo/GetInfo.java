@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 public final class GetInfo extends JFrame {
@@ -19,6 +20,7 @@ public final class GetInfo extends JFrame {
     private final JTextField ySizeField;
     private final JRadioButton horizontalRadio;
     private final JButton listButton;
+    private static JButton submitButton;
 
     // Constructor
     private GetInfo() {
@@ -74,8 +76,7 @@ public final class GetInfo extends JFrame {
         add(listButton);
 
         // Row 5
-        JButton submitButton = new JButton("Submit");
-        submitButton.addActionListener(e -> setValues());
+        submitButton = new JButton("Submit");
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(e -> System.exit(0));
         add(submitButton);
@@ -97,8 +98,15 @@ public final class GetInfo extends JFrame {
 
     // Methods
 
-    public static void open() {
+    public CompletableFuture<Void> open() {
+        log.debug("< OPENING THE WINDOW... >");
+        CompletableFuture<Void> completableFuture = new CompletableFuture<>();
+        submitButton.addActionListener(e -> {
+            GetInfo.getInstance().setValues();
+            completableFuture.complete(null);
+        });
         GetInfo.getInstance().setVisible(true);
+        return completableFuture;
     }
 
     public void setValues() {
@@ -145,6 +153,7 @@ public final class GetInfo extends JFrame {
         );
 
         // Close this window
+        log.debug("< CLOSING THE WINDOW... >");
         setVisible(false);
 
     }
