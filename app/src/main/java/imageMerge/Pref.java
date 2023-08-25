@@ -20,11 +20,11 @@ public final class Pref {
     private List<String> list = new ArrayList<>();
     private boolean isH; // Horizontal = true, Vertical = false
     private String resultInfo; // Result info as String
+    private String outputExt;
 
 
 
     // Getters, Setters
-
     public int getX() {
         return x;
     }
@@ -49,6 +49,12 @@ public final class Pref {
     }
     public void setIsH(boolean h) {
         isH = h;
+    }
+    public String getOutputExt() {
+        return outputExt;
+    }
+    public void setOutputExt(String setOutputExt) {
+        this.outputExt = setOutputExt;
     }
     public String getResultInfo() {
         return resultInfo;

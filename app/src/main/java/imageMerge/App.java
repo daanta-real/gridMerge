@@ -9,7 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 import java.util.concurrent.CompletableFuture;
 
-@Slf4j public class App {
+@Slf4j
+public class App {
 
     public static void main(String[] args) {
 

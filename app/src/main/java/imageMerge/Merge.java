@@ -81,7 +81,7 @@ public final class Merge {
                 int targetElementNumber = isH
                         ? i * x + j // Horizontal
                         : j * y + i // Vertical
-                        ;
+                ;
                 String targetPath = list.get(targetElementNumber);
                 log.debug("[Process {}] ({}, {}) ▶▶▶ Image No.{} ({}) merging...", currLoop++, i, j, targetElementNumber, targetPath);
                 BufferedImage imageOne = ImageIO.read(new File(targetPath));
@@ -92,8 +92,9 @@ public final class Merge {
         }
 
         // Save
-        File mergedFile = new File(Pref.PATH + "/result.bmp");
-        ImageIO.write(mergedImage, "bmp", mergedFile);
+        String ext = pref.getOutputExt();
+        File mergedFile = new File(Pref.PATH + "/result." + ext);
+        ImageIO.write(mergedImage, ext, mergedFile);
         assertTrue(mergedFile.exists(), "Merged image file does not exist");
         log.debug("IMAGE MERGING COMPLETE!");
 

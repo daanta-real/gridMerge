@@ -2,6 +2,7 @@ package imageMerge.GetInfo;
 
 import imageMerge.Pref;
 import imageMerge.Util;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.swing.*;
@@ -27,23 +28,37 @@ public final class GetInfo extends JFrame {
         // Basical settings
         setTitle("User Input UI");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLayout(new GridLayout(5, 2, 10, 10));
+        setLayout(new GridLayout(6, 2, 10, 10));
 
         // Create and apply an empty border with margins
         EmptyBorder marginBorder = new EmptyBorder(20, 20, 20, 20); // Top, left, bottom, right
         rootPane.setBorder(marginBorder);
 
         // Row 1
+        listButton = new JButton("Find..");
+        listButton.addActionListener(e -> {
+            Pref pref = Pref.getInstance();
+            List<String> list = GetList.chooseFiles();
+            pref.setList(list);
+            int length = list.size();
+            if(length > 0) {
+                listButton.setText("Found (" + length + " items)");
+            }
+        });
+        add(new JLabel("Choose files"));
+        add(listButton);
+
+        // Row 2
         xSizeField = new JTextField();
         add(new JLabel("Enter X Size"));
         add(xSizeField);
 
-        // Row 2
+        // Row 3
         ySizeField = new JTextField();
         add(new JLabel("Enter Y Size"));
         add(ySizeField);
 
-        // Row 3
+        // Row 4
         // button
         horizontalRadio = new JRadioButton("Horizontal");
         horizontalRadio.setSelected(true);
@@ -60,21 +75,22 @@ public final class GetInfo extends JFrame {
         add(new JLabel("Select Direction"));
         add(directionPanel);
 
-        // Row 4
-        listButton = new JButton("Find..");
-        listButton.addActionListener(e -> {
-            Pref pref = Pref.getInstance();
-            List<String> list = GetList.chooseFiles();
-            pref.setList(list);
-            int length = list.size();
-            if(length > 0) {
-                listButton.setText("Found (" + length + " items)");
+        // Row 5
+        String[] optionNames = {"BMP", "JPG", "PNG"};
+        String[] optionValues = {"bmp", "jpg", "png"};
+        JComboBox<String> comboBox = new JComboBox<>(optionNames);
+        comboBox.addActionListener(e -> {
+            int selectedIndex = comboBox.getSelectedIndex();
+            if (selectedIndex >= 0) {
+                Pref pref = Pref.getInstance();
+                pref.setOutputExt(optionValues[selectedIndex]);
             }
         });
-        add(new JLabel("Choose files"));
-        add(listButton);
+        comboBox.setLightWeightPopupEnabled(false); // For solving the overflow problem of the combo box
+        add(new JLabel("Save as.."));
+        add(comboBox);
 
-        // Row 5
+        // Row 6
         submitButton = new JButton("Submit");
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(e -> System.exit(0));
@@ -97,6 +113,7 @@ public final class GetInfo extends JFrame {
 
     // Methods
 
+    @NonNull
     public CompletableFuture<Void> open() {
         log.debug("< OPENING THE WINDOW... >");
         CompletableFuture<Void> completableFuture = new CompletableFuture<>();
@@ -140,7 +157,7 @@ public final class GetInfo extends JFrame {
         pref.setIsH(isH);
 
         String infoes1 = String.format("X Size: " + xText + "\nY Size: " + yText + "\nHorizontal: " + isH);
-        String infoes2 = Util.getPrettyStringByJson(pref.getList());
+        String infoes2 = Util.getPrettyStringInJson(pref.getList());
         String infoResult = String.format("%s\n%s", infoes1, infoes2);
         pref.setResultInfo(infoResult);
 

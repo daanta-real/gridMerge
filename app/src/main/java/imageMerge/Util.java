@@ -29,7 +29,8 @@ public final class Util {
 
     }
 
-    @NonNull public static String getPrettyStringByJson(List<String> list) {
+    @NonNull
+    public static String getPrettyStringInJson(List<String> list) {
         return String.format(new GsonBuilder().setPrettyPrinting().create().toJson(list));
     }
 
