@@ -55,5 +55,5 @@ gridMerge v1.0
 
 e-mail: daanta@naver.com
 
-Github: http://github.com/daanta-real
+GitHub: http://github.com/daanta-real
 
