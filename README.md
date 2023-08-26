@@ -1,6 +1,6 @@
 
 > ⚠️ The final version has been released. (v1.0)
-> 
+>
 > ⚠️ 최종 버전이 릴리즈되었습니다. (v1.0)
 
 
@@ -26,21 +26,21 @@ Using this app ou can do:
 
 # Usage example
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/c0321975-c8db-4a5d-b1fe-c9ce57b97cf4)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/c0321975-c8db-4a5d-b1fe-c9ce57b97cf4)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/1161ccf4-ab57-4db8-8598-ed48c00ac8b2)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/1161ccf4-ab57-4db8-8598-ed48c00ac8b2)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/270b10d0-06b9-4930-9426-02afa50281ca)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/270b10d0-06b9-4930-9426-02afa50281ca)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/cbd8dc4d-a5aa-481d-86f4-e4f21e9b3d61)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/cbd8dc4d-a5aa-481d-86f4-e4f21e9b3d61)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/8a138e85-fbbf-49fc-982e-b2fdbb693750)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/8a138e85-fbbf-49fc-982e-b2fdbb693750)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/1ba8b3f6-9115-41ac-8a83-eeb15f230df8)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/1ba8b3f6-9115-41ac-8a83-eeb15f230df8)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/3c65df06-e1f2-438b-b4c9-fd639fb1a5b4)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/3c65df06-e1f2-438b-b4c9-fd639fb1a5b4)
 
-![image](https://github.com/daanta-real/imageMerge/assets/84055731/8e9df3a5-bc63-46b0-99b8-53770b79239e)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/8e9df3a5-bc63-46b0-99b8-53770b79239e)
 
 
 # Development Environments
