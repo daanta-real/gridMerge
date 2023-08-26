@@ -20,6 +20,10 @@ Using this app ou can do:
 
 이런건 차라리 걍 단일 그림파일로 변환해서 보는게 낫겠다 싶어서 그걸 해주는 앱을 만들었습니다
 
+# Requirements for execute
+
+- JRE 20 or higher required.
+
 # Usage example
 
 ![image](https://github.com/daanta-real/imageMerge/assets/84055731/c0321975-c8db-4a5d-b1fe-c9ce57b97cf4)
@@ -38,4 +42,18 @@ Using this app ou can do:
 
 ![image](https://github.com/daanta-real/imageMerge/assets/84055731/8e9df3a5-bc63-46b0-99b8-53770b79239e)
 
-#
+
+# Development Environments
+
+Java 20, Gradle 8, Logback 1.4, JUnit 5, IntelliJ
+
+# Developer's Info
+
+gridMerge v1.0
+
+제작 by 단타(daanta)
+
+e-mail: daanta@naver.com
+
+Github: http://github.com/daanta-real
+
