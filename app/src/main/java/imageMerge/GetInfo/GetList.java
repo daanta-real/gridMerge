@@ -41,9 +41,9 @@ import java.util.List;
         fileChooser.setMultiSelectionEnabled(true);
         fileChooser.setDialogTitle("File selection");
 
-        // Currently only accepts bmp files
-        FileNameExtensionFilter bmpFilter = new FileNameExtensionFilter("BMP Files", "bmp");
-        fileChooser.setFileFilter(bmpFilter);
+        // Accepts BMP, JPG, and PNG files
+        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image Files (.bmp, .jpg, .png)", "bmp", "jpg", "png");
+        fileChooser.setFileFilter(imageFilter);
 
     }
 
