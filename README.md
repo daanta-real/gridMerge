@@ -4,7 +4,7 @@
 > ⚠️ 최종 버전이 릴리즈되었습니다. (v1.0)
 
 
-# imageMerge
+# gridMerge
 A Java app for merging many images into one grid image.
 
 Using this app ou can do:
