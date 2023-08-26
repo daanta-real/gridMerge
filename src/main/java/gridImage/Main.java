@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
-public class App {
+public class Main {
 
     public static void main(String[] args) {
 
