@@ -1,7 +1,7 @@
 
-package gridMerge.GetInfo;
+package gridImage.GetInfo;
 
-import gridMerge.Pref;
+import gridImage.Pref;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 

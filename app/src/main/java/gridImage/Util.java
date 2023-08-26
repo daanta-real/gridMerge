@@ -1,4 +1,4 @@
-package gridMerge;
+package gridImage;
 
 import com.google.gson.GsonBuilder;
 import lombok.NonNull;

@@ -2,6 +2,8 @@ package gridMerge;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import gridImage.Merge;
+import gridImage.Pref;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @Slf4j
-public class ImageMergeTest {
+public class GridMergeTest {
 
     private static int x;
     private static int y;

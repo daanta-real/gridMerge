@@ -1,5 +1,4 @@
-package gridMerge;
-
+package gridImage;
 
 import lombok.extern.slf4j.Slf4j;
 
