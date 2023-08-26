@@ -1,4 +1,4 @@
-package imageMerge;
+package gridMerge;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;
