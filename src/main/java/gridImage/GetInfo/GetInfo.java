@@ -10,7 +10,6 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.net.URL;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -28,11 +27,6 @@ public final class GetInfo extends JFrame {
 
     // Constructor
     private GetInfo() {
-
-        // Set icon
-        URL iconUrl = getClass().getClassLoader().getResource("./gridMerge.ico");
-        Image image = Toolkit.getDefaultToolkit().getImage(iconUrl);
-        setIconImage(image);
 
         // Basical settings
         setTitle("gridMerge");
