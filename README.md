@@ -22,7 +22,7 @@ Using this app ou can do:
 
 # Requirements for execute
 
-- JRE 17 or higher required.
+- JRE 20 or higher required.
 
 # Usage example
 
@@ -45,11 +45,11 @@ Using this app ou can do:
 
 # Development Environments
 
-Java 17, Gradle 8, Logback 1.4, JUnit 5, IntelliJ
+Java 20, Gradle 8, Logback 1.4, JUnit 5, IntelliJ
 
 # Developer's Info
 
-gridMerge v1.0
+gridMerge v1.0 Final
 
 제작 by 단타(daanta)
 

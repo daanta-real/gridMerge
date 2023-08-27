@@ -26,7 +26,7 @@ public final class GetInfo extends JFrame {
     private GetInfo() {
 
         // Basical settings
-        setTitle("User Input UI");
+        setTitle("gridMerge");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(6, 2, 10, 10));
 
