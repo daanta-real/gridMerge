@@ -10,6 +10,13 @@ plugins {
     id 'java'
     id 'application' // Apply the application plugin to add support for building a CLI application in Java.
 }
+application {
+    mainClass.set("gridImage.Main")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     mavenCentral()
@@ -24,9 +31,11 @@ dependencies {
     //  1) 밑에처럼 annotationProcessor 형식의 dependency도 추가로 선언해 줘야 함
     //  2) Settings > Build, Execution, Depolyment > Compiler > Annotation Processors
     //     > Enable annotation processing 에 체크해야 함
+    // 3. testAnnotationPrcessor를 같이 써주지 않으면, 자바 버전을 내렸을 때 에러를 뿜는 경우가 있어서 써주는 것이 좋다.
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     implementation 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 
     // 로깅 라이브러리
     // api 'org.apache.utils.logging.log4j:log4j-core' <<< 안쓸려고..

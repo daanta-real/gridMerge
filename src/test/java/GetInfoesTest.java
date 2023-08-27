@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-@Slf4j class GetInfoesTest {
+@Slf4j
+class GetInfoesTest {
 
     // Remember, if you are to use @BeforeAll annotation it should be a static
     @BeforeAll

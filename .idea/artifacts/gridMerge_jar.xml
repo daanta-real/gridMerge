@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="gridMerge.main:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/gridMerge_main_jar</output-path>
+  <artifact type="jar" name="gridMerge.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gridMerge_jar</output-path>
     <root id="archive" name="gridMerge.main.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" />
