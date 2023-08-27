@@ -5,6 +5,9 @@
 
 
 # gridMerge
+
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/55267d0c-44cf-4c75-8b0d-819ea39a164e)
+
 A Java app for merging many images into one grid image.
 
 Using this app ou can do:
