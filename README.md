@@ -25,19 +25,19 @@ Using this app ou can do:
 
 # Requirements for execute
 
-- JRE 20 or higher required.
+- Java 20 or higher required.
 
 # Usage example
 
 ![image](https://github.com/daanta-real/gridMerge/assets/84055731/c0321975-c8db-4a5d-b1fe-c9ce57b97cf4)
 
-![image](https://github.com/daanta-real/gridMerge/assets/84055731/1161ccf4-ab57-4db8-8598-ed48c00ac8b2)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/cbf1f999-68ee-4c01-9ed4-6b56ae91c666)
 
-![image](https://github.com/daanta-real/gridMerge/assets/84055731/270b10d0-06b9-4930-9426-02afa50281ca)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/a7f6279b-f77b-42fd-94aa-38c64bd0f466)
 
-![image](https://github.com/daanta-real/gridMerge/assets/84055731/cbd8dc4d-a5aa-481d-86f4-e4f21e9b3d61)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/2c131d40-d829-4bf6-9b13-6f7c7f1d5d28)
 
-![image](https://github.com/daanta-real/gridMerge/assets/84055731/8a138e85-fbbf-49fc-982e-b2fdbb693750)
+![image](https://github.com/daanta-real/gridMerge/assets/84055731/035aa52f-cdc2-4b50-ba2f-21fc1b06529c)
 
 ![image](https://github.com/daanta-real/gridMerge/assets/84055731/1ba8b3f6-9115-41ac-8a83-eeb15f230df8)
 
