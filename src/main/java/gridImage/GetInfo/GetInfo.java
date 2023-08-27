@@ -8,6 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URL;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -16,6 +19,7 @@ public final class GetInfo extends JFrame {
 
     // Fields
     private static GetInfo instance;
+    private static Point mouseOffset;
     private final JTextField xSizeField;
     private final JTextField ySizeField;
     private final JRadioButton horizontalRadio;
@@ -25,10 +29,16 @@ public final class GetInfo extends JFrame {
     // Constructor
     private GetInfo() {
 
+        // Set icon
+        URL iconUrl = getClass().getClassLoader().getResource("./gridMerge.ico");
+        Image image = Toolkit.getDefaultToolkit().getImage(iconUrl);
+        setIconImage(image);
+
         // Basical settings
         setTitle("gridMerge");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(6, 2, 10, 10));
+        setUndecorated(true); // Remove top title bar
 
         // Create and apply an empty border with margins
         EmptyBorder marginBorder = new EmptyBorder(20, 20, 20, 20); // Top, left, bottom, right
@@ -99,7 +109,29 @@ public final class GetInfo extends JFrame {
 
         // Resize
         pack();
+
         setLocationRelativeTo(null);
+
+        // Add a mouse listener to the frame's content pane
+        getContentPane().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                // Calculate the offset between mouse click and frame's top-left corner
+                mouseOffset = e.getPoint();
+            }
+        });
+
+        // Add a mouse motion listener to the frame's content pane
+        getContentPane().addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                // Calculate new frame position based on mouse drag
+                Point newLocation = getLocation();
+                newLocation.x += e.getX() - mouseOffset.x;
+                newLocation.y += e.getY() - mouseOffset.y;
+                setLocation(newLocation);
+            }
+        });
 
     }
 
