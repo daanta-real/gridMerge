@@ -25,7 +25,7 @@ Using this app ou can do:
 
 # Requirements for execute
 
-- Java 20 or higher required.
+- Java 21 or higher required.
 
 # Usage example
 
@@ -48,7 +48,7 @@ Using this app ou can do:
 
 # Development Environments
 
-Java 20, Gradle 8, Logback 1.4, JUnit 5, IntelliJ
+Java 21, Gradle 8, Swing, JUnit 5, IntelliJ
 
 # Developer's Info
 
@@ -59,4 +59,3 @@ gridMerge v1.0 Final
 e-mail: daanta@naver.com
 
 GitHub: http://github.com/daanta-real
-

@@ -6,12 +6,12 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/a2ff5da8bcd8b1b26f36b806ced63213362c6dcc/lombok-1.18.28.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
         </processorPath>
         <module name="gridMerge.test" />
         <module name="gridMerge.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="20" />
+    <bytecodeTargetLevel target="21" />
   </component>
 </project>
