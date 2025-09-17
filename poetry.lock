@@ -125,7 +125,19 @@ tests = ["check-manifest", "coverage (>=7.4.2)", "defusedxml", "markdown2", "ole
 typing = ["typing-extensions ; python_version < \"3.10\""]
 xmp = ["defusedxml"]
 
+[[package]]
+name = "tkinterdnd2"
+version = "0.4.3"
+description = "TkinterDnD2 is a python wrapper for George Petasis'' tkDnD Tk extension version 2"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "tkinterdnd2-0.4.3-py3-none-any.whl", hash = "sha256:8804f5d2e2a99713ec93e85384397fec6bf66fdf2065e3750938d55018971c4a"},
+    {file = "tkinterdnd2-0.4.3.tar.gz", hash = "sha256:03a932a11b42ab139c4552b414aa10ee8a087b8386b52baca8c62939760c2ef2"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "4978a0142f68f20795825c25aaed2048e4c1fa8ba3be31b3a09e64b4f297f49c"
+content-hash = "bf3ee53d9b348ba9e209ba8a64d02c9f4cf0faf21acc5022e40ef47a941ee9bc"
