@@ -2,30 +2,26 @@
 import os
 from PIL import Image
 
-def merge_png_files(input_folder: str, output_filename: str, tile_width: int, tile_height: int):
+def merge_png_files(input_folder: str, output_path: str, tile_width: int, tile_height: int):
     """
     지정된 폴더의 PNG 이미지를 순서대로 읽어와 크기를 조절한 후,
     가로 10개씩 타일 형태로 합쳐 하나의 PNG 파일로 저장합니다.
 
     Args:
         input_folder (str): 원본 이미지가 있는 폴더 경로.
-        output_filename (str): 결과로 저장될 파일명.
+        output_path (str): 결과로 저장될 파일 경로.
         tile_width (int): 타일의 가로 크기 (픽셀).
         tile_height (int): 타일의 세로 크기 (픽셀).
     """
     if not os.path.isdir(input_folder):
-        # FileNotFoundError를 발생시켜 main.py에서 예외를 처리하도록 함.
         raise FileNotFoundError(f"'{input_folder}' 폴더를 찾을 수 없습니다.")
 
-    # ... (기존 코드와 동일)
-    # 01L, 01R... 순서로 정렬
     image_names = sorted(os.listdir(input_folder), key=lambda x: (int(x[:-5]), x[-5:]))
     png_files = [f for f in image_names if f.lower().endswith('.png')]
 
     if not png_files:
         raise ValueError("처리할 PNG 이미지가 없습니다.")
 
-    # ... (이미지 처리 및 합치기 코드는 그대로 유지)
     resized_images = []
     tile_size = (tile_width, tile_height)
 
@@ -69,7 +65,7 @@ def merge_png_files(input_folder: str, output_filename: str, tile_width: int, ti
     total_height = num_rows * tile_size[1]
 
     stitched_image = Image.new('RGBA', (total_width, total_height))
-    print("stiched image 생성 완료")
+    print("stitched image 생성 완료")
 
     for i, img in enumerate(resized_images):
         row = i // images_per_row
@@ -80,5 +76,10 @@ def merge_png_files(input_folder: str, output_filename: str, tile_width: int, ti
 
         stitched_image.paste(img, (x_offset, y_offset))
 
-    stitched_image.save(output_filename)
-    print(f"이미지 저장 to {output_filename}")
+    # ⚠️ 이곳에 폴더 생성 로직을 추가했습니다.
+    output_dir = os.path.dirname(output_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    stitched_image.save(output_path)
+    print(f"이미지 저장 to {output_path}")
