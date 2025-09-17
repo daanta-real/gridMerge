@@ -1,0 +1,19 @@
+[project]
+name = "png-merger-py"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Junsung Park / Daanta",email = "daanta@naver.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pillow (>=11.3.0,<12.0.0)"
+]
+
+[tool.poetry]
+package-mode = false # not for the packaging, just only for the code as far
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
